@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_12_090324) do
+ActiveRecord::Schema.define(version: 2021_12_12_093719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "coupons", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.integer "status"
+    t.decimal "discount_value", precision: 5, scale: 2
+    t.integer "max_use"
+    t.datetime "due_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -29,6 +40,15 @@ ActiveRecord::Schema.define(version: 2021_12_12_090324) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["system_requirement_id"], name: "index_games_on_system_requirement_id"
+  end
+
+  create_table "product_categories", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_product_categories_on_category_id"
+    t.index ["product_id"], name: "index_product_categories_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -78,4 +98,6 @@ ActiveRecord::Schema.define(version: 2021_12_12_090324) do
   end
 
   add_foreign_key "games", "system_requirements"
+  add_foreign_key "product_categories", "categories"
+  add_foreign_key "product_categories", "products"
 end
