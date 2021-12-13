@@ -1,4 +1,9 @@
 # README
+## Conceptual Model
+
+![Endpoints](https://github.com/JoaoOtavioSegantini/assets/blob/main/raw/bootdev/Captura%20de%20tela%202021-12-13%20015339.png)
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
