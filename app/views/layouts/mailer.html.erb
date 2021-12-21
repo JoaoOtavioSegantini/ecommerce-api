@@ -1,13 +1,160 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
-    </style>
-  </head>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-  <body>
+<head>
+  <meta name="x-apple-disable-message-reformatting" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <title>Esqueceu sua senha?</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+    .ReadMsgBody {
+      width: 100%;
+      background-color: #ffffff;
+    }
+
+    .ExternalClass {
+      width: 100%;
+      background-color: #ffffff;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    html {
+      width: 100%;
+    }
+
+    body {
+      -webkit-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      border-spacing: 0;
+      table-layout: fixed;
+      margin: 0 auto;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+      display: block;
+      width: auto;
+      max-width: auto;
+      height: auto;
+    }
+
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    u+#body a {
+      color: inherit;
+      font-family: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    .appleLinks a {
+      color: #c2c2c2 !important;
+      text-decoration: none !important;
+    }
+
+    span.preheader {
+      display: none !important;
+    }
+
+    /*------ Media Width 599px ------ */
+    /*Responsive*/
+    @media only screen and (max-width: 699px) {
+
+      table.hideMobile,
+      tr.hideMobile,
+      td.hideMobile,
+      br.hideMobile {
+        display: none !important;
+      }
+
+      table.row,
+      div.row {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      table.centerFloat,
+      td.centerFloat,
+      img.centerFloat {
+        float: none !important;
+        margin: 0 auto !important;
+      }
+
+      table.halfRow,
+      div.halfRow {
+        width: 50% !important;
+        max-width: 50% !important;
+      }
+
+      td.imgResponsive img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: auto;
+      }
+
+      td.menuLink a {
+        display: block;
+        border-top: 1px solid;
+        padding-top: 20px;
+      }
+
+      td.centerText {
+        text-align: center !important;
+      }
+
+      td.imgAuto img {
+        text-align: center !important;
+        margin: auto !important;
+      }
+
+      td.containerPadding {
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+
+      td.spaceControl {
+        height: 15px !important;
+        font-size: 15px !important;
+        line-height: 15px !important;
+      }
+    }
+  </style>
+</head>
+
+  <body bgcolor="#10163A" marginwidth="0" marginheight="0"
+  style="margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"
+  offset="0" topmargin="0" leftmargin="0">
     <%= yield %>
   </body>
 </html>

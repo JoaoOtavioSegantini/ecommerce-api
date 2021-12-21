@@ -44,6 +44,7 @@ Rails.application.configure do
   port: 1025,
 }
 
+
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
