@@ -23,6 +23,9 @@ gem 'devise_token_auth', '~> 1.1.4'
 # CORS
 gem 'rack-cors', '~> 1.1.1'
 
+# Rendering
+gem 'jbuilder', '~> 2.10.1'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
