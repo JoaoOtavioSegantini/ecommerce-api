@@ -18,7 +18,7 @@ gem 'puma', '~> 4.1'
 
 
 # Auth
-gem 'devise_token_auth', '~> 1.1.4'
+gem 'devise_token_auth', github: 'lynndylanhurley/devise_token_auth', branch: 'master'
 
 # CORS
 gem 'rack-cors', '~> 1.1.1'
