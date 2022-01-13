@@ -431,15 +431,24 @@ RSpec.describe "Admin V1 Products as :admin", type: :request do
       expected_product_categories = ProductCategory.where(id: product_categories.map(&:id))
       expect(expected_product_categories.count).to eq 0
     end
+
+    it 'does not remove unassociated product categories' do
+      product_categories = create_list(:product_category, 3)
+      delete url, headers: auth_header(user)
+      present_product_categories_ids = product_categories.map(&:id)
+      expected_product_categories = ProductCategory.where(id: present_product_categories_ids)
+      expect(expected_product_categories.ids).to contain_exactly(*present_product_categories_ids)
+    end
+  end
 end
 
 def build_game_product_json(product)
-    json = product.as_json(only: %i(id name description price status featured))
-    json['image_url'] = rails_blob_url(product.image)
-    json['productable'] = product.productable_type.underscore
-    json['productable_id'] = product.productable_id
-    json['categories'] = product.categories.as_json
-    json.merge! product.productable.as_json(only: %i(mode release_date developer))
-    json['system_requirement'] = product.productable.system_requirement.as_json
-    json
-  end
+  json = product.as_json(only: %i(id name description price status featured))
+  json['image_url'] = rails_blob_url(product.image)
+  json['productable'] = product.productable_type.underscore
+  json['productable_id'] = product.productable_id
+  json['categories'] = product.categories.as_json
+  json.merge! product.productable.as_json(only: %i(mode release_date developer))
+  json['system_requirement'] = product.productable.system_requirement.as_json
+  json
+end
