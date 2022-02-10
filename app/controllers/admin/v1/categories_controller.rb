@@ -32,7 +32,6 @@ class CategoriesController < ApiController
       @category = Category.find(params[:id])
     end
 
- 
     def searchable_params
       params.permit({ search: :name }, { order: {} }, :page, :length)
     end
