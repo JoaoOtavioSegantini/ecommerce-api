@@ -5,6 +5,10 @@ module Storefront::V1
             @service = Storefront::ProductsFilterService.new(search_params)
             @service.call
           end
+          
+          def show
+            @product = Product.find(params[:id])
+          end
 
       private
 
