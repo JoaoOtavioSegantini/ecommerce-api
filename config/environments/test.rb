@@ -9,6 +9,8 @@ Rails.application.configure do
   config.cache_classes = false
   config.action_view.cache_template_loading = true
 
+  JUNO_AUTH_URL = "https://sandbox.boletobancario.com"
+  JUNO_RESOURCE_URL = "https://sandbox.boletobancario.com/api-integration"
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.

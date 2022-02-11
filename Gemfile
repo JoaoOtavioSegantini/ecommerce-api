@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 2.10.1'
 # Validation
 gem 'cpf_cnpj', '~> 0.5.0'
 
+# HTTP Request
+gem 'httparty', '~> 0.18.1'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
