@@ -5,7 +5,11 @@ FactoryBot.define do
     total_amount { subtotal }
     payment_type { :credit_card }
     installments { 5 }
+    card_hash { Faker::Lorem.characters }
+    address { build(:address) }
+    document { "03.000.050/0001-67" }
     user
+
 
     trait :with_items do
       after :build do |order|
