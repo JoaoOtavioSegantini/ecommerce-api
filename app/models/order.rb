@@ -4,6 +4,7 @@ class Order < ApplicationRecord
   belongs_to :user
   belongs_to :coupon, optional: true
   has_many :line_items
+  has_many :juno_charges, class_name: 'Juno::Charge'
 
   attribute :address
   attribute :card_hash
