@@ -26,6 +26,9 @@ gem 'rack-cors', '~> 1.1.1'
 # Rendering
 gem 'jbuilder', '~> 2.10.1'
 
+# Validation
+gem 'cpf_cnpj', '~> 0.5.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
