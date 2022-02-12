@@ -34,6 +34,7 @@ gem 'httparty', '~> 0.18.1'
 
 # Delayed Jobs
 gem "sidekiq", '~> 6.1.3'
+gem "sidekiq-scheduler", '~> 3.0.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
