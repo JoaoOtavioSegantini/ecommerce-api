@@ -18,6 +18,9 @@ Rails.application.routes.draw do
       resources :users
       post "/coupons/:coupon_code/validations", to: "coupon_validations#create"
       resources :orders, only: [:index, :show]
+      namespace :dashboard do
+        resources :summaries, only: :index
+      end
     end
   end
 
