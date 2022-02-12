@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       resources :products
       resources :system_requirements
       resources :users
+      post "/coupons/:coupon_code/validations", to: "coupon_validations#create"
+      resources :orders, only: [:index, :show]
     end
   end
 
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
       resources :categories, only: :index
       resources :checkouts, only: :create
       post "/coupons/:coupon_code/validations", to: "coupon_validations#create"
+      resources :orders, only: [:index, :show]
       resources :wish_items, only: [:index, :create, :destroy]
     end
   end
