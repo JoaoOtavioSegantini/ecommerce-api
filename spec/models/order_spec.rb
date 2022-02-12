@@ -60,11 +60,6 @@ RSpec.describe Order, type: :model do
       expect(subject.errors).to have_key(:address)
     end
 
-    it "validates_associated :address" do
-      subject = build(:order, payment_type: :credit_card, address: nil)
-      subject.validate
-      expect(subject.errors).to have_key(:address)
-    end
     
     it "schedules a job for Juno charge creation after creation" do
       order = build(:order)
@@ -89,5 +84,13 @@ RSpec.describe Order, type: :model do
       expect(line_item).to_not receive(:ship!)
       order.update!(subtotal: 30)
     end
+
+    it "validates_associated :address" do
+      subject = build(:order, payment_type: :credit_card, address: nil)
+      subject.validate
+      expect(subject.errors).to have_key(:address)
+    end
   end
+
+    it_behaves_like "paginatable concern", :order
 end
