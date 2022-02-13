@@ -16,16 +16,17 @@ Rails.application.routes.draw do
       resources :products
       resources :system_requirements
       resources :users
-      post "/coupons/:coupon_code/validations", to: "coupon_validations#create"
       resources :orders, only: [:index, :show]
+      
       namespace :dashboard do
+        resources :sales_ranges, only: :index
         resources :summaries, only: :index
         resources :top_five_products, only: :index
       end
     end
   end
 
-  namespace :storefront do
+  namespace :storefront, defaults: { format: :json } do
     namespace :v1 do
       get "home" => "home#index"
       resources :products, only: [:index, :show]

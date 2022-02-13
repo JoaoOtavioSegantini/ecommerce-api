@@ -56,8 +56,8 @@ module Admin::Dashboard
     def order_arel
       @order_arel if @order_arel.present?
       field = Order.arel_table[:created_at]
-      @order_arel = { month: field.extract('month').as('month'), 
-                      year: field.extract('year').as('year'), day: field.extract('day').as('day') }
+      @order_arel = { month: field.extract('month').as('month'), year: field.extract('year').as('year'), 
+                      day: field.extract('day').as('day') }
     end
   end
 end
