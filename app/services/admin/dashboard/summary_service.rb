@@ -18,15 +18,10 @@ module Admin::Dashboard
 
       def calculate_orders
         arel = Order.arel_table
-      end
-
-      def calculate_orders
-        arel = Order.arel_table
         calc = Order.where(status: :finished, created_at: @min_date..@max_date)
                     .pluck(arel[:id].count, arel[:total_amount].sum).flatten
         @records[:orders] = calc.first
         @records[:profit] = calc.second
       end
-      
     end
   end
